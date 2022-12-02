@@ -52,6 +52,8 @@ public:
         {
             Polynomial derivitive = findDerivitive();
             std::vector derivitiveZeros = derivitive.Solve(prescision);
+
+            
         }
         else
         {
