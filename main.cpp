@@ -51,14 +51,12 @@ public:
         if (getOrder() > 1)
         {
             Polynomial derivitive = findDerivitive();
-            std::vector derivitiveZeros = derivitive.Solve(prescision);
-
-            
+            std::vector<float> derivitiveZeros = derivitive.Solve(prescision);
         }
         else
         {
             // Solve the linear equation here
-            return std::vector({-terms[1] / terms[0]});
+            return std::vector<float>({-terms[1] / terms[0]});
         }
     }
 };

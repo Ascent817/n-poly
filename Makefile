@@ -1,2 +1,7 @@
-main:
-	g++ -o main main.cpp
+all: main
+
+main: main.cpp
+	$(CXX) -o main main.cpp
+
+clean:
+	$(RM) main
