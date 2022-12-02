@@ -45,14 +45,18 @@ public:
         return Polynomial(derivitiveCoefficents);
     }
 
-    Polynomial Solve(float prescision)
+    std::vector<float> Solve(float prescision)
     {
-        // First, solve the derivitive recursively if nessesary
+        // First, solve the derivitive recursively
         if (getOrder() > 1)
         {
             Polynomial derivitive = findDerivitive();
-            Polynomial derivitiveSolution = derivitive.Solve(prescision);
-            std::cout << "Derivitive solution: " << derivitiveSolution.evaluate(0) << std::endl;
+            std::vector derivitiveZeros = derivitive.Solve(prescision);
+        }
+        else
+        {
+            // Solve the linear equation here
+            return std::vector({-terms[1] / terms[0]});
         }
     }
 };
